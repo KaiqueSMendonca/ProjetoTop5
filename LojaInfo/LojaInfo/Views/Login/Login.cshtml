@@ -1,0 +1,37 @@
+﻿@model LojaInfo.Models.Usuario
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+@using (Html.BeginForm("VerificarUser", "Login",FormMethod.Post))
+{
+<fieldset>
+    <legend>LOGIN</legend>
+    <div>
+        @Html.LabelFor(m => m.nome_usuario) @*Criação do titulo usuario*@
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.nome_usuario)@*Caixa de texto *@
+    </div>
+    <div>
+        @Html.ValidationMessageFor(m => m.nome_usuario, "", new { @class = "text-danger" }) @*Mensagem de erro *@
+    </div>
+
+    <did>
+        @Html.LabelFor(m => m.senha_usuario)
+    </did>
+    <div>
+        @Html.PasswordFor(m => m.senha_usuario)
+    </div>
+    <div>
+        @Html.ValidationMessageFor(m => m.senha_usuario,"", new { @class = "text-danger" }) @*Mensagem de erro *@
+    </div>
+    <br />
+    <div>
+        <input type="submit" name="btnEnviar" value="Login"/>
+    </div>
+</fieldset>
+}
+
