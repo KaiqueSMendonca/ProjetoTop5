@@ -1,4 +1,5 @@
 /*Criando o banco de dados */
+DROP DATABASE IF EXISTS BDLOJA;
 CREATE DATABASE BDLOJA
 default character set utf8
 default collate utf8_general_ci;
@@ -29,9 +30,10 @@ CREATE TABLE tbCliente(
 
 CREATE TABLE tbProduto(
 	CodProd int primary key auto_increment,
+    LinkImg varchar(200),
 	NomeProd varchar(50),
 	DescProd varchar(100),
-	ValorUnitario varchar(20)
+	ValorUnitario decimal(10,2)
 )default charset utf8;
 
 
@@ -39,7 +41,7 @@ CREATE TABLE tbPagamento(
 	CodPagto int primary key auto_increment,
 	DescPgto varchar(50),
 	Quantidade int,
-	ValorTotal varchar(20)
+	ValorTotal decimal(10,2)
 )default charset utf8;
 
 

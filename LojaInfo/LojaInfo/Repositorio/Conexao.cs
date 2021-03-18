@@ -9,7 +9,7 @@ namespace LojaInfo.Repositorio
     // classe conexão do banco de dados
     public class Conexao
     {
-        MySqlConnection cn = new MySqlConnection("Server=localhost; DataBase=BDLOJAINFO; user=root;pwd=1234567");
+        MySqlConnection cn = new MySqlConnection("Server=localhost; DataBase=BDLOJA; user=root;pwd=79737406");
         public static string msg;
 
         // conecta no banco

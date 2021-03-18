@@ -17,7 +17,8 @@ namespace LojaInfo.Repositorio
         // criando o metodo para testar o usuario e senha no banco
         public Usuario TestarUsuario(Usuario user)
         {
-            MySqlCommand cmd = new MySqlCommand("Select * from tbUsuario where NomeUsuario=@usuario and SenhaUsuario=@senha", con.MyConectarBD());
+            MySqlCommand cmd = new MySqlCommand("Select * from tbUsuario " +
+                "where nome_usuario=@usuario and senha_usuario=@senha", con.MyConectarBD());
             cmd.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = user.nome_usuario;
             cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = user.senha_usuario;
 
@@ -29,8 +30,8 @@ namespace LojaInfo.Repositorio
                 while (leitor.Read())
                 {
                     Usuario dto = new Usuario();
-                    dto.nome_usuario = Convert.ToString(leitor["NomeUsuario"]);
-                    dto.senha_usuario = Convert.ToString(leitor["SenhaUsuario"]);
+                    dto.nome_usuario = Convert.ToString(leitor["nome_usuario"]);
+                    dto.senha_usuario = Convert.ToString(leitor["senha_usuario"]);
                 }
             }
             else
