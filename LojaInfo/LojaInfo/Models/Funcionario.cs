@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LojaInfo.Models
 {
-    public class Funcionarios
+    public class Funcionario
     {
         // Criando o modelo vindo do banco para ser tratado, campo que é a chave identificadora da classe
         [Key]

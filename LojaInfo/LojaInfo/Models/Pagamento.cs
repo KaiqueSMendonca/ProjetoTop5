@@ -15,17 +15,17 @@ namespace LojaInfo.Models
 
         // criando o modelo vindo do banco de dados para ser tratado, campo obrigatório e mostrar o texto indicado
         [Required(ErrorMessage = "Obrigatório informar a descrição do produto !!")]
-        [Display(Name = "DESCRIÇÃO DO PRODUTO")]
-        public String DescProd { get; set; }
+        [Display(Name = "DESCRIÇÃO DO PAGAMENTO")]
+        public String DescPgto { get; set; }
 
         // criando o modelo vindo do banco de dados para ser tratado, campo obrigatório e mostrar o texto indicado
         [Required(ErrorMessage = "Obrigatório informar a quantidade do produto!!")]
-        [Display(Name = "QUANTIDADE DO PRODUTO")]
+        [Display(Name = "QUANTIDADE")]
         public int Quantidade { get; set; }
 
         // criando o modelo vindo do banco de dados para ser tratado, campo obrigatório e mostrar o texto indicado
         [Required(ErrorMessage = "Obrigatório informar o valor total do pagamento !!")]
         [Display(Name = "VALOR TOTAL DO PAGAMENTO")]
-        public double ValorUnitario { get; set; }
+        public double ValorTotal { get; set; }
     }
 }
