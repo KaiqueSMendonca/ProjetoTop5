@@ -71,7 +71,7 @@ namespace LojaInfo.DAOs
         {
             MySqlCommand cmd = new MySqlCommand("insert into " +
                 "tbPagamento(DescPgto,Quantidade,ValorTotal) " +
-                "values(@DescPgto,@NomeProd,@ValorTotal)", cn.MyConectarBD());
+                "values(@DescPgto,@Quantidade,@ValorTotal)", cn.MyConectarBD());
 
             cmd.Parameters.Add("@DescPgto", MySqlDbType.VarChar).Value = pag.DescPgto;
             cmd.Parameters.Add("@Quantidade", MySqlDbType.VarChar).Value = pag.Quantidade;
@@ -86,7 +86,7 @@ namespace LojaInfo.DAOs
             MySqlCommand cmd = new MySqlCommand("update tbPagamento set " +
                 "DescPgto = @DescPgto," +
                 "Quantidade = @Quantidade," +
-                "ValorTotal = @ValorTotal," +
+                "ValorTotal = @ValorTotal " +
                 "where CodPagto = @CodPagto", cn.MyConectarBD());
 
             cmd.Parameters.Add("@CodPagto", MySqlDbType.VarChar).Value = prod.CodPagto;

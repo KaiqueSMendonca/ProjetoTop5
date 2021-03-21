@@ -1,0 +1,40 @@
+﻿@model LojaInfo.Models.Funcionario
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>Deletar</h2>
+
+<h3>Confirmar exclusão de Funcionário</h3>
+<div>
+    <h4>Funcionario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelFunc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

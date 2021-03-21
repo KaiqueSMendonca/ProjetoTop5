@@ -86,7 +86,7 @@ namespace LojaInfo.DAOs
             MySqlCommand cmd = new MySqlCommand("update tbCliente set " +
                 "NomeCli = @NomeCli," +
                 "TelCli = @TelCli," +
-                "EmailCli = @EmailCli," +
+                "EmailCli = @EmailCli " +
                 "where CodCli = @CodCli", cn.MyConectarBD());
 
             cmd.Parameters.Add("@CodCli", MySqlDbType.VarChar).Value = cli.CodCli;

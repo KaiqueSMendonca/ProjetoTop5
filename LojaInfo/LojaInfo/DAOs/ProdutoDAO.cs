@@ -72,7 +72,7 @@ namespace LojaInfo.DAOs
         public void insert(Produto prod)
         {
             MySqlCommand cmd = new MySqlCommand("insert into " +
-                "tbProduto(LinkImg~,NomeProd,DescProd,ValorUnitario) " +
+                "tbProduto(LinkImg,NomeProd,DescProd,ValorUnitario) " +
                 "values(@LinkImg,@NomeProd,@DescProd,@ValorUnitario)", cn.MyConectarBD());
 
             cmd.Parameters.Add("@LinkImg", MySqlDbType.VarChar).Value = prod.LinkImg;

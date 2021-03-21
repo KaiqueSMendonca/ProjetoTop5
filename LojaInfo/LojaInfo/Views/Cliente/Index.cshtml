@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LojaInfo.Models.Cliente>
+
+@{
+    ViewBag.Title = "Lista de Clientes";
+}
+
+<h2>Lista de Clientes</h2>
+
+<p>
+    @Html.ActionLink("Novo Cliente", "Cadastrar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeCli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelCli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailCli)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeCli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelCli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailCli)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { cd = item.CodCli }) |
+            @Html.ActionLink("Deletar", "Deletar", new { cd = item.CodCli })
+        </td>
+    </tr>
+}
+
+</table>

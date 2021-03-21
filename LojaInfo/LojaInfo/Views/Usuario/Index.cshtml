@@ -1,0 +1,38 @@
+﻿@model IEnumerable<LojaInfo.Models.Usuario>
+
+@{
+    ViewBag.Title = "Lista de Usuários";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Novo Usuário", "Cadastrar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome_usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.senha_usuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.senha_usuario)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { cd = item.cod_usuario }) |
+            @Html.ActionLink("Deletar", "Deletar", new { cd = item.cod_usuario })
+        </td>
+    </tr>
+}
+
+</table>

@@ -121,8 +121,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PagamentoController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAOs\ClienteDAO.cs" />
     <Compile Include="DAOs\FuncionarioDAO.cs" />
     <Compile Include="DAOs\PagamentoDAO.cs" />
@@ -176,6 +181,26 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\VerificarUser.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Cadastrar.cshtml" />
+    <Content Include="Views\Usuario\Alterar.cshtml" />
+    <Content Include="Views\Usuario\Deletar.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Produto\Cadastrar.cshtml" />
+    <Content Include="Views\Produto\Alterar.cshtml" />
+    <Content Include="Views\Produto\Deletar.cshtml" />
+    <Content Include="Views\Pagamento\Index.cshtml" />
+    <Content Include="Views\Pagamento\Cadastrar.cshtml" />
+    <Content Include="Views\Pagamento\Alterar.cshtml" />
+    <Content Include="Views\Pagamento\Deletar.cshtml" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Funcionario\Cadastrar.cshtml" />
+    <Content Include="Views\Funcionario\Alterar.cshtml" />
+    <Content Include="Views\Funcionario\Deletar.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Cadastrar.cshtml" />
+    <Content Include="Views\Cliente\Alterar.cshtml" />
+    <Content Include="Views\Cliente\Deletar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

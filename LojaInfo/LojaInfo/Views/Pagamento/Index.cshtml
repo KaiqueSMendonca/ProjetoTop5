@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LojaInfo.Models.Pagamento>
+
+@{
+    ViewBag.Title = "Lista de Pagamentos";
+}
+
+<h2>Lista de Pagamentos</h2>
+
+<p>
+    @Html.ActionLink("Novo Pagamento", "Cadastrar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DescPgto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescPgto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorTotal)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { cd = item.CodPagto }) |
+            @Html.ActionLink("Deletar", "Deletar", new { cd = item.CodPagto })
+        </td>
+    </tr>
+}
+
+</table>

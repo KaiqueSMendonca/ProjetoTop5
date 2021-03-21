@@ -1,0 +1,48 @@
+﻿@model LojaInfo.Models.Cliente
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>Deletar</h2>
+
+<h3>Confirmar exclusão de Cliente</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeCli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeCli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelCli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelCli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailCli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailCli)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

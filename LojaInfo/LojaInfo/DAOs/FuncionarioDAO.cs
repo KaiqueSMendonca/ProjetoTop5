@@ -25,9 +25,9 @@ namespace LojaInfo.DAOs
             {
                 Funcionario tempFunc = new Funcionario();
 
-                tempFunc.CodFunc = Convert.ToInt32(leitor["CodPagto"]);
-                tempFunc.NomeFunc = Convert.ToString(leitor["DescPgto"]);
-                tempFunc.TelFunc = Convert.ToString(leitor["Quantidade"]);
+                tempFunc.CodFunc = Convert.ToInt32(leitor["CodFunc"]);
+                tempFunc.NomeFunc = Convert.ToString(leitor["NomeFunc"]);
+                tempFunc.TelFunc = Convert.ToString(leitor["TelFunc"]);
 
                 listaFunc.Add(tempFunc);
             }
@@ -52,9 +52,9 @@ namespace LojaInfo.DAOs
             {
                 Funcionario tempFunc = new Funcionario();
 
-                tempFunc.CodFunc = Convert.ToInt32(leitor["CodPagto"]);
-                tempFunc.NomeFunc = Convert.ToString(leitor["DescPgto"]);
-                tempFunc.TelFunc = Convert.ToString(leitor["Quantidade"]);
+                tempFunc.CodFunc = Convert.ToInt32(leitor["CodFunc"]);
+                tempFunc.NomeFunc = Convert.ToString(leitor["NomeFunc"]);
+                tempFunc.TelFunc = Convert.ToString(leitor["TelFunc"]);
 
                 listaFunc.Add(tempFunc);
             }
@@ -82,7 +82,7 @@ namespace LojaInfo.DAOs
         {
             MySqlCommand cmd = new MySqlCommand("update tbFuncionario set " +
                 "NomeFunc = @NomeFunc," +
-                "TelFunc = @TelFunc," +
+                "TelFunc = @TelFunc " +
                 "where CodFunc = @CodFunc", cn.MyConectarBD());
 
             cmd.Parameters.Add("@CodFunc", MySqlDbType.VarChar).Value = func.CodFunc;
