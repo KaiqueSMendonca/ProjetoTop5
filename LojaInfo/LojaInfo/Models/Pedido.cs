@@ -17,12 +17,12 @@ namespace LojaInfo.Models
         // criando o modelo vindo do banco de dados para ser tratado, campo obrigatório e mostrar o texto indicado
         [Required(ErrorMessage = "Obrigatório informar código do funcionário!!")]
         [Display(Name = "CÓDIGO DO FUNCIONÁRIO")]
-        public String CodFunc { get; set; }
+        public int CodFunc { get; set; }
 
         // criando o modelo vindo do banco de dados para ser tratado, campo obrigatório e mostrar o texto indicado
         [Required(ErrorMessage = "Obrigatório informar código do cliente!!")]
         [Display(Name = "CÓDIGO DO CLIENTE")]
-        public String CodCli { get; set; }
+        public int CodCli { get; set; }
 
         // criando o modelo vindo do banco de dados para ser tratado, campo obrigatório e mostrar o texto indicado
         [Required(ErrorMessage = "Obrigatório informar a data do pedido !!")]

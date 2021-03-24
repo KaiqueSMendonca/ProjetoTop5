@@ -125,22 +125,25 @@
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\PagamentoController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAOs\ClienteDAO.cs" />
     <Compile Include="DAOs\FuncionarioDAO.cs" />
-    <Compile Include="DAOs\PagamentoDAO.cs" />
+    <Compile Include="DAOs\ItensPedidoDAO.cs" />
+    <Compile Include="DAOs\PedidoDAO.cs" />
     <Compile Include="DAOs\ProdutoDAO.cs" />
     <Compile Include="DAOs\UsuarioDAO.cs" />
+    <Compile Include="DAOs\VendaDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Funcionario.cs" />
-    <Compile Include="Models\Pagamento.cs" />
+    <Compile Include="Models\ItensPedido.cs" />
+    <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Venda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\Acoes.cs" />
     <Compile Include="Repositorio\Conexao.cs" />
@@ -189,10 +192,6 @@
     <Content Include="Views\Produto\Cadastrar.cshtml" />
     <Content Include="Views\Produto\Alterar.cshtml" />
     <Content Include="Views\Produto\Deletar.cshtml" />
-    <Content Include="Views\Pagamento\Index.cshtml" />
-    <Content Include="Views\Pagamento\Cadastrar.cshtml" />
-    <Content Include="Views\Pagamento\Alterar.cshtml" />
-    <Content Include="Views\Pagamento\Deletar.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Funcionario\Cadastrar.cshtml" />
     <Content Include="Views\Funcionario\Alterar.cshtml" />
