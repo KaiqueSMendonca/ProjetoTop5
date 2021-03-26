@@ -1,0 +1,56 @@
+﻿@model IEnumerable<LojaInfo.Models.Venda>
+
+@{
+    ViewBag.Title = "Lista de Vendas";
+}
+
+<h2>Lista de Vendas</h2>
+
+<p>
+    @Html.ActionLink("Nova Venda", "Cadastrar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodPed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FormaPag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataEntrega)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndEntrega)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodPed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FormaPag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataEntrega)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndEntrega)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Alterar", new { cd = item.CodVenda }) |
+            @Html.ActionLink("Deletar", "Deletar", new { cd = item.CodVenda })
+        </td>
+    </tr>
+}
+
+</table>

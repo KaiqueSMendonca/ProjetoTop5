@@ -1,0 +1,56 @@
+﻿@model LojaInfo.Models.Pedido
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>Deletar Pedido</h2>
+
+<h3>Confirmar exclusão de pedido</h3>
+<div>
+    <h4>Pedido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodCli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodCli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorPed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorPed)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

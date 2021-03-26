@@ -124,9 +124,12 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItensPedidoController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VendaController.cs" />
     <Compile Include="DAOs\ClienteDAO.cs" />
     <Compile Include="DAOs\FuncionarioDAO.cs" />
     <Compile Include="DAOs\ItensPedidoDAO.cs" />
@@ -200,6 +203,18 @@
     <Content Include="Views\Cliente\Cadastrar.cshtml" />
     <Content Include="Views\Cliente\Alterar.cshtml" />
     <Content Include="Views\Cliente\Deletar.cshtml" />
+    <Content Include="Views\Pedido\Index.cshtml" />
+    <Content Include="Views\Pedido\Cadastrar.cshtml" />
+    <Content Include="Views\Pedido\Alterar.cshtml" />
+    <Content Include="Views\Pedido\Deletar.cshtml" />
+    <Content Include="Views\ItensPedido\Index.cshtml" />
+    <Content Include="Views\ItensPedido\Cadastrar.cshtml" />
+    <Content Include="Views\ItensPedido\Alterar.cshtml" />
+    <Content Include="Views\ItensPedido\Deletar.cshtml" />
+    <Content Include="Views\Venda\Index.cshtml" />
+    <Content Include="Views\Venda\Cadastrar.cshtml" />
+    <Content Include="Views\Venda\Alterar.cshtml" />
+    <Content Include="Views\Venda\Deletar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
