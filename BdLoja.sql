@@ -45,7 +45,7 @@ create table tbPedido(
     CodCli int not null,
 	foreign key(CodCli) references tbCliente(CodCli),
     DataPed date not null,
-    ValorPed decimal(7,2)
+    ValorPed decimal(10,2)
 )default charset utf8;
 
 create table tbItensPedido(
@@ -54,7 +54,7 @@ create table tbItensPedido(
     CodProd int not null,
 	foreign key(CodProd) references tbProduto(CodProd),
     Qtitem int not null,
-    ValorItem decimal(7,2),
+    ValorItem decimal(10,2),
     primary key (CodPed, CodProd)
 )default charset utf8;
 
@@ -62,7 +62,7 @@ create table tbVenda(
 	CodVenda int auto_increment primary key,
     CodPed int not null,
 	foreign key(CodPed) references tbPedido(CodPed),
-	Valor decimal(7,2) not null,
+	Valor decimal(10,2) not null,
     FormaPag varchar(50)not null,
     DataEntrega date,
     EndEntrega varchar(50)
