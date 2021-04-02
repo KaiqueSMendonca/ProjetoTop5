@@ -18,7 +18,7 @@ namespace LojaInfo.DAOs
         public List<ItensPedido> listar()
         {
             //Montando o comando SQL
-            MySqlCommand cmd = new MySqlCommand("Select * from tbItensPedido ", cn.MyConectarBD());
+            MySqlCommand cmd = new MySqlCommand("Select * from vw_carrinho ", cn.MyConectarBD());
             var listaitens = new List<ItensPedido>();
 
             MySqlDataReader leitor;
@@ -31,6 +31,8 @@ namespace LojaInfo.DAOs
 
                 tempItem.CodPed = Convert.ToInt32(leitor["CodPed"]);
                 tempItem.CodProd = Convert.ToInt32(leitor["CodProd"]);
+                tempItem.NomeProd = Convert.ToString(leitor["NomeProd"]);
+                tempItem.LinkImg = Convert.ToString(leitor["LinkImg"]);
                 tempItem.Qtitem = Convert.ToInt32(leitor["Qtitem"]);
                 tempItem.ValorItem = Convert.ToDouble(leitor["ValorItem"]);
 
@@ -48,7 +50,7 @@ namespace LojaInfo.DAOs
         public List<ItensPedido> listarPorCodPed(int CodPed)
         {
             //Montando o comando SQL
-            MySqlCommand cmd = new MySqlCommand("Select * from tbItensPedido " +
+            MySqlCommand cmd = new MySqlCommand("Select * from vw_carrinho " +
                 "where CodPed=@CodPed", cn.MyConectarBD());
             cmd.Parameters.Add("@CodPed", MySqlDbType.VarChar).Value = CodPed;
 
@@ -64,6 +66,8 @@ namespace LojaInfo.DAOs
 
                 tempItem.CodPed = Convert.ToInt32(leitor["CodPed"]);
                 tempItem.CodProd = Convert.ToInt32(leitor["CodProd"]);
+                tempItem.NomeProd = Convert.ToString(leitor["NomeProd"]);
+                tempItem.LinkImg = Convert.ToString(leitor["LinkImg"]);
                 tempItem.Qtitem = Convert.ToInt32(leitor["Qtitem"]);
                 tempItem.ValorItem = Convert.ToDouble(leitor["ValorItem"]);
 
@@ -81,7 +85,7 @@ namespace LojaInfo.DAOs
         public ItensPedido listarPorCd(int CodPed, int CodProd)
         {
             //Montando o comando SQL
-            MySqlCommand cmd = new MySqlCommand("Select * from tbItensPedido " +
+            MySqlCommand cmd = new MySqlCommand("Select * from vw_carrinho " +
                 "where CodPed=@CodPed and CodProd=@CodProd", cn.MyConectarBD());
             cmd.Parameters.Add("@CodPed", MySqlDbType.VarChar).Value = CodPed;
             cmd.Parameters.Add("@CodProd", MySqlDbType.VarChar).Value = CodProd;
@@ -97,6 +101,8 @@ namespace LojaInfo.DAOs
 
                 tempItem.CodPed = Convert.ToInt32(leitor["CodPed"]);
                 tempItem.CodProd = Convert.ToInt32(leitor["CodProd"]);
+                tempItem.NomeProd = Convert.ToString(leitor["NomeProd"]);
+                tempItem.LinkImg = Convert.ToString(leitor["LinkImg"]);
                 tempItem.Qtitem = Convert.ToInt32(leitor["Qtitem"]);
                 tempItem.ValorItem = Convert.ToDouble(leitor["ValorItem"]);
 
@@ -122,7 +128,7 @@ namespace LojaInfo.DAOs
             //Montando o comando SQL
             MySqlCommand cmd = new MySqlCommand("insert into " +
                 "tbItensPedido(CodPed,CodProd,Qtitem,ValorItem) " +
-                "values(@CodPed,@CodProd,@DataPed,@ValorItem)", cn.MyConectarBD());
+                "values(@CodPed,@CodProd,@Qtitem,@ValorItem)", cn.MyConectarBD());
 
             cmd.Parameters.Add("@CodPed", MySqlDbType.VarChar).Value = item.CodPed;
             cmd.Parameters.Add("@CodProd", MySqlDbType.VarChar).Value = item.CodProd;

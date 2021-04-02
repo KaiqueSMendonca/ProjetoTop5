@@ -42,6 +42,7 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Alterar", new { cd = item.CodPed }) |
+            @Html.ActionLink("Ver Carrinho", "Index","Itenspedido", new { CodPed = item.CodPed },null) |
             @Html.ActionLink("Deletar", "Deletar", new { cd = item.CodPed })
         </td>
     </tr>

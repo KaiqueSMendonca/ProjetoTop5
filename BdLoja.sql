@@ -80,4 +80,14 @@ select * from tbVenda;
 
 /*Inserindo dados nas tables */
 
-insert into tbUsuario(nome_usuario,senha_usuario) values('admin','12345678')
+insert into tbUsuario(nome_usuario,senha_usuario) values('admin','12345678');
+
+
+/*Criando view para itens do pedido*/
+drop view if exists vw_carrinho;
+create view vw_carrinho
+as select ip.CodPed, ip.CodProd, p.NomeProd, ip.Qtitem, ip.ValorItem, p.Linkimg
+from tbItensPedido as ip inner join tbProduto as p
+on ip.CodProd = p.CodProd;
+
+select * from vw_carrinho;

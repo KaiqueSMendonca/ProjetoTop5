@@ -89,7 +89,7 @@ namespace LojaInfo.DAOs
 
             cmd.Parameters.Add("@CodFunc", MySqlDbType.VarChar).Value = ped.CodFunc;
             cmd.Parameters.Add("@CodCli", MySqlDbType.VarChar).Value = ped.CodCli;
-            cmd.Parameters.Add("@DataPed", MySqlDbType.VarChar).Value = ped.DataPed;
+            cmd.Parameters.Add("@DataPed", MySqlDbType.VarChar).Value = ped.DataPed.ToString("yyyy-MM-dd");
 
             //fechando o reader e a conexão com banco
             cmd.ExecuteNonQuery();
@@ -110,7 +110,7 @@ namespace LojaInfo.DAOs
             cmd.Parameters.Add("@CodPed", MySqlDbType.VarChar).Value = ped.CodPed;
             cmd.Parameters.Add("@CodFunc", MySqlDbType.VarChar).Value = ped.CodFunc;
             cmd.Parameters.Add("@CodCli", MySqlDbType.VarChar).Value = ped.CodCli;
-            cmd.Parameters.Add("@DataPed", MySqlDbType.VarChar).Value = ped.DataPed;
+            cmd.Parameters.Add("@DataPed", MySqlDbType.VarChar).Value = ped.DataPed.ToString("yyyy-MM-dd");
 
             //Executando o comando e fechando a conexão
             cmd.ExecuteNonQuery();

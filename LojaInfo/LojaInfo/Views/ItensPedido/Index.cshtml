@@ -7,7 +7,7 @@
 <h2>Lista de itens</h2>
 
 <p>
-    @Html.ActionLink("Novo Item", "Cadastrar")
+    @Html.ActionLink("Novo item", "Cadastrar", new { CodPed = ViewData["CodPed"] })
 </p>
 <table class="table">
     <tr>
@@ -32,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.CodPed)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CodProd)
+            @Html.DisplayFor(modelItem => item.NomeProd)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Qtitem)

@@ -16,7 +16,7 @@ namespace LojaInfo.Models
 
         // Criando o modelo vindo do banco para ser tratado, campo que é uma das chaves identificadoras da classe
         [Required(ErrorMessage = "Obrigatório informar o código do produto!!")]
-        [Display(Name = "CÓDIGO DO PRODUTO")]
+        [Display(Name = "PRODUTO")]
         public int CodProd { get; set; }
 
         // criando o modelo vindo do banco de dados para ser tratado, campo obrigatório e mostrar o texto indicado
@@ -27,5 +27,8 @@ namespace LojaInfo.Models
         // criando o modelo vindo do banco de dados para ser tratado, campo obrigatório e mostrar o texto indicado
         [Display(Name = "VALOR DO ITEM")]
         public double ValorItem { get; set; }
+
+        public String LinkImg { get; set; }
+        public String NomeProd { get; set; }
     }
 }

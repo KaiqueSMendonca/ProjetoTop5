@@ -13,16 +13,20 @@ namespace LojaInfo.Controllers
 
         // Criando o objeto responsável por executar as ações no banco de dados
         ItensPedidoDAO ipDAO = new ItensPedidoDAO();
+        ProdutoDAO prodDAO = new ProdutoDAO();
 
         // Action para listar todos os registros existentes
-        public ActionResult Index()
+        public ActionResult Index(int CodPed)
         {
-            return View(ipDAO.listar());
+            ViewData["CodPed"] = CodPed;
+            return View(ipDAO.listarPorCodPed(CodPed));
         }
 
         // Action para carregar a view para o cadastro de um novo registro
-        public ActionResult Cadastrar()
+        public ActionResult Cadastrar(int CodPed)
         {
+            ViewBag.prods = prodDAO.listar();
+            ViewData["CodPed"] = CodPed;
             return View();
         }
 
@@ -31,12 +35,13 @@ namespace LojaInfo.Controllers
         public ActionResult Cadastrar(ItensPedido ip)
         {
             ipDAO.insert(ip);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { CodPed = ip.CodPed });
         }
 
         // Action para carregar a view para a alteração de um registro
         public ActionResult Alterar(int CodPed, int CodProd)
         {
+            ViewBag.prods = prodDAO.listar();
             return View(ipDAO.listarPorCd(CodPed, CodProd));
         }
 
@@ -45,7 +50,7 @@ namespace LojaInfo.Controllers
         public ActionResult Alterar(ItensPedido ip)
         {
             ipDAO.update(ip);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { CodPed = ip.CodPed });
         }
 
         // Action para carregar a view para o usuario confirmar a exclusão de um registro
@@ -59,7 +64,7 @@ namespace LojaInfo.Controllers
         public ActionResult Deletar(int CodPed, int CodProd, ItensPedido ip)
         {
             ipDAO.delete(CodPed, CodProd);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { CodPed = ip.CodPed });
         }
     }
 }

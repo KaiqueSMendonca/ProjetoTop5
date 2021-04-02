@@ -97,7 +97,7 @@ namespace LojaInfo.DAOs
             cmd.Parameters.Add("@CodPed", MySqlDbType.VarChar).Value = venda.CodPed;
             cmd.Parameters.Add("@Valor", MySqlDbType.VarChar).Value = venda.Valor;
             cmd.Parameters.Add("@FormaPag", MySqlDbType.VarChar).Value = venda.FormaPag;
-            cmd.Parameters.Add("@DataEntrega", MySqlDbType.VarChar).Value = venda.DataEntrega;
+            cmd.Parameters.Add("@DataEntrega", MySqlDbType.VarChar).Value = venda.DataEntrega.ToString("yyyy-MM-dd");
             cmd.Parameters.Add("@EndEntrega", MySqlDbType.VarChar).Value = venda.EndEntrega;
 
             //fechando o reader e a conexão com banco
@@ -126,7 +126,7 @@ namespace LojaInfo.DAOs
             cmd.Parameters.Add("@CodPed", MySqlDbType.VarChar).Value = venda.CodPed;
             cmd.Parameters.Add("@Valor", MySqlDbType.VarChar).Value = venda.Valor;
             cmd.Parameters.Add("@FormaPag", MySqlDbType.VarChar).Value = venda.FormaPag;
-            cmd.Parameters.Add("@DataEntrega", MySqlDbType.VarChar).Value = venda.DataEntrega;
+            cmd.Parameters.Add("@DataEntrega", MySqlDbType.VarChar).Value = venda.DataEntrega.ToString("yyyy-MM-dd");
             cmd.Parameters.Add("@EndEntrega", MySqlDbType.VarChar).Value = venda.EndEntrega;
 
             //fechando o reader e a conexão com banco
